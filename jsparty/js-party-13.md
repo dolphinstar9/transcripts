@@ -30,7 +30,7 @@ Sometime early last year we decided that we're just gonna bite the bullet and we
 
 **Rebecca Turner:** ...and we first started to actually see results -- I think you tried it out in late January...
 
-**Kat Marchán:** Late January, early February \[unintelligible 00:03:24.23\]
+**Kat Marchán:** Late January, early February that's when I could actually do it. 
 
 **Rebecca Turner:** ...and we were really surprised to find that it was unbelievably faster. The old cache was -- I still don't know how it was as slow as it was.
 
@@ -68,7 +68,7 @@ When we were working on designing npm@5, one of the things we wanted to do was t
 
 **Alex Sexton:** \[00:07:58.00\] That's encouraging.
 
-**Mikeal Rogers:** Yeah, I have to say my favorite feature actually probably is the default save stuff. I think the first bug in most of my packages that I've received from other people is "You forgot to actually add this dependency" because \[unintelligible 00:08:12.08\] for half of the things that I installed, and then not one of them... This just completely solves that, I'm so excited about it.
+**Mikeal Rogers:** Yeah, I have to say my favorite feature actually probably is the default save stuff. I think the first bug in most of my packages that I've received from other people is "You forgot to actually add this dependency" because I used save for half of the things that I installed, and then not one of them... This just completely solves that, I'm so excited about it.
 
 **Kat Marchán:** Me too... I think we've been pushing to try and do this for a while... It's like, "How do we push this in?" This is a serious change in people's npm workflow, right? This is not a change that we could do lightly, as small as it seems...
 
@@ -82,7 +82,7 @@ When we were working on designing npm@5, one of the things we wanted to do was t
 
 **Kat Marchán:** Yeah, the --cache-max 0...?
 
-**Rebecca Turner:** No, because it's \[unintelligible 00:09:27.01\]
+**Rebecca Turner:** No, because it's through your port tax, cahce max would not make it through your port tax. 
 
 **Kat Marchán:** Right, right. So we have stuff on the pipeline now, things like... I've talked about --low-mem, which I need to spec out and hopefully get in something like that.
 
@@ -102,7 +102,7 @@ When we were working on designing npm@5, one of the things we wanted to do was t
 
 **Alex Sexton:** I think one of the primary overarching stories behind a lot of this is most people do a thing, and they do that thing and they're like "How come npm doesn't do this?" and I think no one's invoked the "yarn" word yet, but I think a lot of what yarn was was "Hey, there's this use case that if we take away all these other constraints that npm has and all these other things that they have to do, then we can do this other thing very quickly, and add some features." It seems like a primary story of npm is that there are a lot of different use cases and continuing to support all those has very unique challenges in places that people don't even consider.
 
-**Kat Marchán:** Yeah, I mean npm is the default, and that means that we have to support all these people; not just new people that are coming in, but what five, six years of people who have old setups and don't wanna have their keys moved too much. \[unintelligible 00:11:27.29\] Maybe that's a bit of a weird metaphor at this point, but I think it's okay for npm to make tradeoffs that other things can't. We're not gonna sacrifice the user base that we have in order to primarily serve what developers -- so we can serve both, and that's what we'll do... We'll optimize for like spreading out...
+**Kat Marchán:** Yeah, I mean npm is the default, and that means that we have to support all these people; not just new people that are coming in, but what five, six years of people who have old setups and don't wanna have their keys moved too much. Although we had this conversation yesterday.  Maybe that's a bit of a weird metaphor at this point, but I think it's okay for npm to make tradeoffs that other things can't. We're not gonna sacrifice the user base that we have in order to primarily serve what developers -- so we can serve both, and that's what we'll do... We'll optimize for like spreading out...
 
 Another aspect of npm@5 is that it is probably our most significant step in a while towards breaking npm down into significant chunks, with the intention of -- like, the dream here is to (the platonic idea, if you will) be able to take all the components that npm uses right now, pick only the ones that you like and need, and then cook up your own package manager for your particular community.
 
@@ -232,7 +232,7 @@ As with any major release of a tool this core, I would say that you try it, you 
 
 **Alex Sexton:** If you currently have a shrinkwrap, do you need to generate a new shrinkwrap with 5?
 
-**Kat Marchán:** No. We will probably -- in the case of most shrinkwraps; I don't know if all shrinkwraps in existence... But we will update that on run. One thing to note is that npm-shrinkwrap and package-lock.json are the same format. The main difference is that npm-shrinkwrap is publishable and package-lock is not. Shrinkwrap is meant for things that you really absolutely need to guarantee \[unintelligible 00:27:28.16\] for people who install your package. So we automatically read that we'll use it, and then we'll write it back out in the new format.
+**Kat Marchán:** No. We will probably -- in the case of most shrinkwraps; I don't know if all shrinkwraps in existence... But we will update that on run. One thing to note is that npm-shrinkwrap and package-lock.json are the same format. The main difference is that npm-shrinkwrap is publishable and package-lock is not. Shrinkwrap is meant for things that you really absolutely need to guarantee exactly for people who install your package. So we automatically read that we'll use it, and then we'll write it back out in the new format.
 
 The thing to note is if you keep it called npm-shrinkwrap, older versions of npm down to like npm@2 will be able to install it; not npm@1, because of scope packages, but all the way down to 2 you should be able to get identical trees pretty much.
 
